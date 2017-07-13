@@ -36,7 +36,7 @@ public class multiBrowsers {
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://www.tigerdirect.com");
+		driver.get("http://www.sdettraining.com");
 
 	}
 
