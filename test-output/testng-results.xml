@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4661" started-at="2017-07-13T18:22:24Z" finished-at="2017-07-13T18:22:28Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="4661" started-at="2017-07-13T18:22:24Z" finished-at="2017-07-13T18:22:28Z">
+      <class name="com.fanniemae.testcases.multiBrowsers">
+        <test-method status="PASS" signature="getalllinksOnHomePage()[pri:0, instance:com.fanniemae.testcases.multiBrowsers@5e3a8624]" name="getalllinksOnHomePage" duration-ms="4640" started-at="2017-07-13T14:22:24Z" finished-at="2017-07-13T14:22:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getalllinksOnHomePage -->
+      </class> <!-- com.fanniemae.testcases.multiBrowsers -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
