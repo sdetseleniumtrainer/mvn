@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.fanniemae.testcases.multiBrowsers">
+      <class name="com.fanniemae.testcases.SDET_NewMember_TestCase">
         <methods>
-          <include name="getalllinksOnHomePage"/>
+          <include name="test_SDET_NewMember"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.fanniemae.testcases.multiBrowsers -->
+      </class> <!-- com.fanniemae.testcases.SDET_NewMember_TestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
