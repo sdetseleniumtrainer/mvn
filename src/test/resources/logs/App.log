@@ -1,10 +1,5 @@
-20/07/2017 04:00:26 devpinoyLogger Config file loaded !!!
-20/07/2017 04:00:26 devpinoyLogger OR file loaded !!!
-20/07/2017 04:00:28 devpinoyLogger IE Launched !!!
-20/07/2017 04:00:29 devpinoyLogger Navigated to : http://sdettraining.com/trguitransactions/default.aspx?id=new
-20/07/2017 04:00:29 devpinoyLogger Inside testFrameworkSDETLogin
-20/07/2017 04:00:30 devpinoyLogger Clicked LoginBtn
-20/07/2017 04:00:30 devpinoyLogger Typed in xpath_User
-20/07/2017 04:00:31 devpinoyLogger Typed in id_Pwdr
-20/07/2017 04:00:35 devpinoyLogger Clicked BottomLoginBtn
-20/07/2017 04:01:14 devpinoyLogger test execution completed !!!
+20/07/2017 14:12:21 devpinoyLogger Config file loaded !!!
+20/07/2017 14:12:21 devpinoyLogger OR file loaded !!!
+20/07/2017 14:12:24 devpinoyLogger IE Launched !!!
+20/07/2017 14:12:26 devpinoyLogger Navigated to : http://sdettraining.com/trguitransactions/default.aspx?id=new
+20/07/2017 14:12:27 devpinoyLogger test execution completed !!!
