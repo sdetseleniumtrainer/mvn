@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.fanniemae.testcases.SDET_NewMember_TestCase">
+      <class name="com.fanniemae.testcases.SDET_Login_TestCase">
         <methods>
-          <include name="test_SDET_NewMember"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="testKWDFrameworkSDETLogin"/>
         </methods>
-      </class> <!-- com.fanniemae.testcases.SDET_NewMember_TestCase -->
+      </class> <!-- com.fanniemae.testcases.SDET_Login_TestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

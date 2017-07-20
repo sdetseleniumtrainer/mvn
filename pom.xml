@@ -76,8 +76,6 @@
 						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
-
-
 			</plugin>
 		</plugins>
 	</build>

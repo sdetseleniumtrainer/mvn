@@ -9,7 +9,7 @@ import com.fanniemae.base.TestBase;
 
 public class SDET_NewMember_TestCase extends TestBase {
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	  public void test_SDET_NewMember() throws Exception {
 		//WebDriver driver;
 	    driver.findElement(By.id("HeadLoginView_lblLoginStatus")).click();

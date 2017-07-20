@@ -61,13 +61,26 @@ public class SDET_Login_TestCase extends TestBase {
 		//driver.findElement(By.xpath(OR.getProperty("xpath_LoginBtn"))).click();
 		
 		
-		type("xpath_User","stu701@sdettraining.com");
+		type("xpath_User","Alex.good@gmail.com");
 		System.out.println("typed in xpath_User");
 		log.debug("Typed in xpath_User");
 		
 		
+		type("id_Pwd","Alex123");
+		System.out.println("typed in id_Pwd");
+		log.debug("Typed in id_Pwdr");
+		
+		
+		click("id_BottomLoginbutton");
+		System.out.println("id_BottomLoginBtn clicked");
+		log.debug("Clicked BottomLoginBtn");
+		
+		
 		Thread.sleep(3000);
-		//System.out.println("Browser opened!!!!");
+		
+		Assert.assertEquals(getText("id_SuccessLogin"),"Welcome back!");
+		
+		
 	}
 	
 	

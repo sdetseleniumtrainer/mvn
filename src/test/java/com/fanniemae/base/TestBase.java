@@ -133,7 +133,7 @@ public class TestBase {
 		} else if (locator.startsWith("id_")) {
 			driver.findElement(By.id(OR.getProperty(locator))).click();
 		}
-		test.log(LogStatus.INFO, "Clicking on : " + locator);
+		//test.log(LogStatus.INFO, "Clicking on : " + locator);
 	}
 
 	public void type(String locator, String value) {
@@ -146,7 +146,7 @@ public class TestBase {
 			driver.findElement(By.id(OR.getProperty(locator))).sendKeys(value);
 		}
 
-		test.log(LogStatus.INFO, "Typing in : " + locator + " entered value as " + value);
+		//test.log(LogStatus.INFO, "Typing in : " + locator + " entered value as " + value);
 
 	}
 	
@@ -167,6 +167,21 @@ public class TestBase {
 
 		test.log(LogStatus.INFO, "Selecting from dropdown : " + locator + " value as " + value);
 
+	}
+	
+	
+	public String getText(String locator) {
+
+		if (locator.startsWith("css_")) {
+			return driver.findElement(By.cssSelector(OR.getProperty(locator))).getText();
+		} else if (locator.startsWith("xpath_")) {
+			return driver.findElement(By.xpath(OR.getProperty(locator))).getText();
+			
+		} else if (locator.startsWith("id_")) {
+			return driver.findElement(By.id(OR.getProperty(locator))).getText();
+		}
+		//test.log(LogStatus.INFO, "Clicking on : " + locator);
+		return "COULD NOT READ TEXT";
 	}
 	
 	

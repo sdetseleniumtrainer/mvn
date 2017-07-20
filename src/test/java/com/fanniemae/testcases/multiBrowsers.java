@@ -22,7 +22,7 @@ public class multiBrowsers {
 	WebDriver driver;
 	public static String screenshotName;
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void getalllinksOnHomePage() throws IOException {
 
 		System.out.println("Code to getAllLinksOnHomePage will come here");
@@ -31,18 +31,20 @@ public class multiBrowsers {
 		// System.getProperty("user.dir") +
 		// "\\src\\test\\resources\\executables\\geckodriver.exe");
 
-		// System.setProperty("webdriver.firefox.marionette","c:\\geckodriver.exe");
-		// driver = new FirefoxDriver();
+	//	 System.setProperty("webdriver.firefox.marionette","c:\\geckodriver.exe");
+	//	 driver = new FirefoxDriver();
 
 		String BrowserToRun = "webdriver.chrome.chromedriver";
 		String BrowserDriverLocation = "C:\\SeleniumJAVATraining\\Softwares\\chromedriver_win32\\chromedriver.exe";
 
-	   //	System.setProperty("webdriver.chrome.driver","C:\\SeleniumJAVATraining\\Softwares\\chromedriver_win32\\chromedriver.exe");
-	   //	driver = new ChromeDriver();
+	//   	System.setProperty("webdriver.chrome.driver","C:\\SeleniumJAVATraining\\Softwares\\chromedriver_win32\\chromedriver.exe");
+	//   	driver = new ChromeDriver();
 		
+	//   	System.setProperty("webdriver.chrome.driver",
+	//			System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
+	//	driver = new ChromeDriver();
 		
-		System.setProperty("webdriver.ie.driver",
-				"C:\\SeleniumJAVATraining\\Softwares\\IEDriverServer\\32bit\\IEDriverServer.exe");
+		System.setProperty("webdriver.ie.driver","C:\\SeleniumJAVATraining\\Softwares\\IEDriverServer\\32bit\\IEDriverServer.exe");
 		driver = new InternetExplorerDriver();
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
