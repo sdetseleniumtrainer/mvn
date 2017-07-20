@@ -13,7 +13,7 @@ public class DummyTestCase extends TestBase {
 	@Test
 	public void tc_LoginTestCase() throws IOException{
 		
-		TestUtil.captureScreenshot();
+		
 	}
 	
 	

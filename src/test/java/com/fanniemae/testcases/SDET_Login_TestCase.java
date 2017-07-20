@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.fanniemae.base.TestBase;
+import com.fanniemae.utilities.TestUtil;
 
 public class SDET_Login_TestCase extends TestBase {
 
@@ -116,6 +117,9 @@ public class SDET_Login_TestCase extends TestBase {
 			click("id_LoginBtn");
 			type(UserName,UserNameValue);
 			type(Password,PasswordValue);
+			
+			TestUtil.captureScreenshot();
+			
 			click("id_BottomLoginbutton");
 			Thread.sleep(3000);
 			Assert.assertEquals(getText("id_SuccessLogin"),"Welcome back!");
@@ -138,7 +142,7 @@ public class SDET_Login_TestCase extends TestBase {
 		 connectionString = "jdbc:sqlserver://sql2k801.discountasp.net:1433;databasename=SQL2008_841902_tr;user=SQL2008_841902_tr_user;password=52645264hrm";
 		 DBSqlServerDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	 
-		 sqlQuery="select top 5 custemail, custpassword from TRCustomers order by cust_id";
+		 sqlQuery="select top 4 custemail, custpassword from TRCustomers order by cust_id";
 		 
 	 try{
 			 
