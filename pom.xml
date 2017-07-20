@@ -58,6 +58,16 @@
 			<version>2.41.2</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>6.2.0.jre7</version>
+			<scope>test</scope>
+		</dependency>
+
+
+
 
 	</dependencies>
 

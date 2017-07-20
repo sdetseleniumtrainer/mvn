@@ -1,5 +1,10 @@
 package com.fanniemae.testcases;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,6 +15,8 @@ import com.fanniemae.base.TestBase;
 
 public class SDET_Login_TestCase extends TestBase {
 
+	 String DBDataInLocalArray[][]=null;
+	 int numOfRows = 0;
 	//WebDriver driver;
 
 	
@@ -49,47 +56,131 @@ public class SDET_Login_TestCase extends TestBase {
 	@Test(enabled=true)
 	public void testKWDFrameworkSDETLogin() throws InterruptedException{
 		//driver.findElement(By.xpath("//*[@id='HeadLoginView_lblLoginStatus']")).click();
-		log.debug("Inside testFrameworkSDETLogin");
 		
-		Assert.assertTrue(isElementPresent(By.id(OR.getProperty("id_LoginBtn"))),"Login button not present :)");
+		String UserName="xpath_User";
+		String UserNameValue="Alex.good@gmail.com";
+		
+		String Password="id_Pwd";
+		String PasswordValue="Alex123";
+		
+				log.debug("Inside testFrameworkSDETLogin");
+				
+				Assert.assertTrue(isElementPresent(By.id(OR.getProperty("id_LoginBtn"))),"Login button not present :)");
+				
+				
+				//driver.findElement(By.id(OR.getProperty("id_LoginBtn"))).click();
+				click("id_LoginBtn");
+				System.out.println("id_LoginBtn clicked");
+				log.debug("Clicked LoginBtn");
+				//driver.findElement(By.xpath(OR.getProperty("xpath_LoginBtn"))).click();
+				
+				
+				type(UserName,UserNameValue);
+				System.out.println("typed in xpath_User");
+				log.debug("Typed in xpath_User");
+				
+				
+				type(Password,PasswordValue);
+				System.out.println("typed in id_Pwd");
+				log.debug("Typed in id_Pwdr");
+				
+				
+				click("id_BottomLoginbutton");
+				System.out.println("id_BottomLoginBtn clicked");
+				log.debug("Clicked BottomLoginBtn");
+				
+				
+				Thread.sleep(3000);
+				
+				Assert.assertEquals(getText("id_SuccessLogin"),"Welcome back!");
+				
+		
+	}
+	
+	
+	
+	@Test(enabled=true)
+	public void test_DDT_SDETLogin() throws Exception{
 		
 		
-		//driver.findElement(By.id(OR.getProperty("id_LoginBtn"))).click();
-		click("id_LoginBtn");
-		System.out.println("id_LoginBtn clicked");
-		log.debug("Clicked LoginBtn");
-		//driver.findElement(By.xpath(OR.getProperty("xpath_LoginBtn"))).click();
+        FetchDBData();
 		
-		
-		type("xpath_User","Alex.good@gmail.com");
-		System.out.println("typed in xpath_User");
-		log.debug("Typed in xpath_User");
-		
-		
-		type("id_Pwd","Alex123");
-		System.out.println("typed in id_Pwd");
-		log.debug("Typed in id_Pwdr");
-		
-		
-		click("id_BottomLoginbutton");
-		System.out.println("id_BottomLoginBtn clicked");
-		log.debug("Clicked BottomLoginBtn");
-		
-		
-		Thread.sleep(3000);
-		
-		Assert.assertEquals(getText("id_SuccessLogin"),"Welcome back!");
+		for(int i=0; i<numOfRows; i++){	
+			
+			String UserName="xpath_User";
+			String Password="id_Pwd";
+			String UserNameValue= DBDataInLocalArray[i][0];                  ;
+			String PasswordValue=DBDataInLocalArray[i][1];  
+			
+			
+			click("id_LoginBtn");
+			type(UserName,UserNameValue);
+			type(Password,PasswordValue);
+			click("id_BottomLoginbutton");
+			Thread.sleep(3000);
+			Assert.assertEquals(getText("id_SuccessLogin"),"Welcome back!");
+			
+		}
 		
 		
 	}
 	
 	
 	
-	
-	
-	
-	
-	
+	public void FetchDBData() throws Exception{
+		 
+		 String connectionString=null;
+		 String DBSqlServerDriver=null;
+		 String sqlQuery=null;
+		 
+		
+		
+		 connectionString = "jdbc:sqlserver://sql2k801.discountasp.net:1433;databasename=SQL2008_841902_tr;user=SQL2008_841902_tr_user;password=52645264hrm";
+		 DBSqlServerDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	 
+		 sqlQuery="select top 5 custemail, custpassword from TRCustomers order by cust_id";
+		 
+	 try{
+			 
+			 Class.forName(DBSqlServerDriver);
+			 Connection oConn = DriverManager.getConnection(connectionString);
+			 Statement oStmt = oConn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			 
+			 ResultSet oRslt =   oStmt.executeQuery(sqlQuery);
+			 
+			 oRslt.last();
+			 numOfRows =  oRslt.getRow();
+			 
+			 System.out.println("Total Records from DB: " + numOfRows);
+			 oRslt.beforeFirst();
+			 
+			 
+			 
+			 DBDataInLocalArray = new String[numOfRows][2];
+			 
+			 int i=0;
+			 while(oRslt.next()){
+				 
+				 System.out.println("Reading Email from DB: " + oRslt.getString("CustEmail"));
+				 DBDataInLocalArray[i][0] =   oRslt.getString("CustEmail");
+				 
+				 System.out.println("Reading Password from DB: " + oRslt.getString("CustPassword"));
+				 DBDataInLocalArray[i][1] =   oRslt.getString("CustPassword");
+								
+				 i=i+1;
+			 }
+			 
+			// oRslt.close();
+			// oConn.close();
+			 
+		 }
+		 catch(Exception e){
+			 System.err.println("Error occured while connecting to the DB: " + e.getMessage());
+		 }
+		 
+		 
+	 }
+
 	
 	
 
