@@ -27,7 +27,7 @@ public class TestUtil extends TestBase {
 		FileUtils.copyFile(scrFile,
 				new File(System.getProperty("user.dir") + "\\target\\surefire-reports\\html\\" + screenshotName));
 		
-		System.out.println(screenshotName + " SCREENSHOT TAKEN!!!");
+		System.out.println(screenshotName + " SCREENSHOT TAKEN Successfully!!!");
 		
 		
 
